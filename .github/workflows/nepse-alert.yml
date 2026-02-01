@@ -1,0 +1,14 @@
+name: Nepse Alert Test
+
+on:
+  schedule:
+    - cron: "30 15 * * 0-4"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print hello
+        run: echo "GitHub Actions is working"
