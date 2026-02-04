@@ -1,5 +1,8 @@
-console.log("BOT_TOKEN exists:", !!process.env.TELEGRAM_BOT_TOKEN);
-console.log("CHAT_ID exists:", !!process.env.TELEGRAM_CHAT_ID);
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+console.log("BOT_TOKEN exists:", !!BOT_TOKEN);
+console.log("CHAT_ID exists:", !!CHAT_ID);
 
 if (!BOT_TOKEN || !CHAT_ID) {
   console.error("Missing Telegram secrets");
@@ -7,7 +10,6 @@ if (!BOT_TOKEN || !CHAT_ID) {
 }
 
 const message = "✅ GitHub Actions successfully sent this message!";
-
 const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
 async function sendMessage() {
