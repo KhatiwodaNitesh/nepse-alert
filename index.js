@@ -1,11 +1,15 @@
+console.log("Nepse Alert JS script started");
+
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-console.log("BOT_TOKEN exists:", !!BOT_TOKEN);
-console.log("CHAT_ID exists:", !!CHAT_ID);
+console.log("Env check:", {
+  BOT_TOKEN: !!BOT_TOKEN,
+  CHAT_ID: !!CHAT_ID,
+});
 
 if (!BOT_TOKEN || !CHAT_ID) {
-  console.error("Missing Telegram secrets");
+  console.error("❌ Missing Telegram secrets");
   process.exit(1);
 }
 
@@ -25,11 +29,11 @@ async function sendMessage() {
   const data = await response.json();
 
   if (!data.ok) {
-    console.error("Telegram API error:", data);
+    console.error("❌ Telegram API error:", data);
     process.exit(1);
   }
 
-  console.log("Message sent successfully");
+  console.log("✅ Message sent successfully");
 }
 
 sendMessage();
