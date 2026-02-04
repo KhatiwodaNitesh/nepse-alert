@@ -1,10 +1,5 @@
 name: Nepse Alert Test
 
-env:
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
-
 on:
   schedule:
     - cron: "30 15 * * 0-4"
@@ -25,3 +20,6 @@ jobs:
 
       - name: Run JS script
         run: node index.js
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
