@@ -1,5 +1,5 @@
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+console.log("BOT_TOKEN exists:", !!process.env.TELEGRAM_BOT_TOKEN);
+console.log("CHAT_ID exists:", !!process.env.TELEGRAM_CHAT_ID);
 
 if (!BOT_TOKEN || !CHAT_ID) {
   console.error("Missing Telegram secrets");
